@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mi Portal</title>
+
+  <style>
+
+    body {
+
+      margin: 0;
+
+      background: #111827;
+
+      color: white;
+
+      font-family: Arial, sans-serif;
+
+      text-align: center;
+
+    }
+
+    header {
+
+      padding: 28px 12px;
+
+      background: #1f2937;
+
+    }
+
+    h1 { color: #60a5fa; }
+
+    input {
+
+      padding: 12px;
+
+      width: 75%;
+
+      max-width: 350px;
+
+      border-radius: 10px;
+
+      border: 0;
+
+    }
+
+    main {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 16px;
+
+      padding: 24px 12px;
+
+    }
+
+    a {
+
+      background: #374151;
+
+      color: white;
+
+      padding: 22px;
+
+      border-radius: 12px;
+
+      text-decoration: none;
+
+      min-width: 110px;
+
+    }
+
+    a:hover { background: #2563eb; }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <h1>🎮 Mi Portal</h1>
+
+    <p>Bienvenido a mi página</p>
+
+    <input id="buscar" placeholder="Buscar un botón..."
+
+      oninput="filtrar()">
+
+  </header>
+
+  <main id="juegos">
+
+    <a href="https://www.youtube.com">▶️ YouTube</a>
+
+    <a href="https://www.roblox.com">🎮 Roblox</a>
+
+    <a href="https://scratch.mit.edu">🧩 Scratch</a>
+
+    <a href="https://pages.github.com">💻 Aprende a crear webs</a>
+
+  </main>
+
+  <script>
+
+    function filtrar() {
+
+      const texto = document.getElementById("buscar")
+
+        .value.toLowerCase();
+
+      document.querySelectorAll("#juegos a").forEach(boton => {
+
+        boton.style.display =
+
+          boton.textContent.toLowerCase().includes(texto)
+
+            ? "" : "none";
+
+      });
+
+    }
+
+  </script>
+
+</body>
+
+</html>
